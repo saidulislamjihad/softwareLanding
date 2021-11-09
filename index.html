@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap link -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Fontawesome Link -->
+	<link rel="stylesheet" type="text/css" href="assets/font/fontawesome/css/all.css">
+	<!-- owl-cerousel css link -->
+	<link rel="stylesheet" type="text/css" href="assets/plugins/owl-carousel/owl.carousel.min.css">
+	<!-- Main css Link -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<header class="header-main">
+		<nav class="nav-main">
+			<!-- logo start -->
+			<a href="#" class="header-main-logo">
+				<img src="assets/logo/logo.png">
+			</a>
+			<!-- logo End -->
+			<!-- Small Device btn start -->
+			<div class="nav-toggle-btn">
+				<div class="btn-inner"></div>
+			</div>
+			<!-- Small Device btn End -->
+			<!-- Nav items start -->
+			<ul class="nav-items-wrapper">
+				<li class="nav-item-main">
+					<a class="nav-item-main-link" href="#">
+						Home
+					</a>
+				</li><li class="nav-item-main">
+					<a class="nav-item-main-link" href="#">
+						Features
+					</a>
+				</li>
+				<li class="nav-item-main">
+					<a class="nav-item-main-link" href="#">
+						Services
+					</a>
+				</li>
+				<li class="nav-item-main">
+					<a class="nav-item-main-link" href="#">
+						Testimonials
+					</a>
+				</li>
+			</ul>
+			<!-- Nav items End -->
+		</nav>
+	</header>
+	<main>
+		<section class="home-banner-section" style="background-image: url('./assets/img/bg-img.png');">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12">
+						<h1 class="block-effect" style="--td: 1.2s">
+						  <div class="block-reveal" style="--bc: #4040bf; --d: .1s">Software</div>
+						  <div class="block-reveal" style="--bc: #bf4060; --d: .5s">Delopment</div>
+						</h1>
+
+						<div class="info">
+						  <p>Contractors can optimize resource management and mitigate risk using Labor Demand, Service Area Insights and PreQual.Contractors can optimize resource management and mitigate risk using Labor Demand, Service Area Insights and PreQual.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>		
+	</main>
+<!-- Jquery CDN-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstap JS CDN -->
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- owl-crousel js -->
+<script src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+<!-- Main js -->
+<script src="assets/js/main.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		if($(window).width() <= 1024){
+			$('.nav-item-submenu').addClass('collapse');
+		}else{
+			$('.nav-item-submenu').removeClass('collapse');
+		}
+
+		// Nav submenu Responsive
+		$(window).resize(function(){
+			if($(window).width() <= 1024){
+				$('.nav-item-submenu').addClass('collapse');
+			}else{
+				$('.nav-item-submenu').removeClass('collapse');
+			}
+		});
+
+		// Nav submenu collapse
+
+		 $(window).resize(function(){
+	      if($(window).width() <= 1024){
+	        $('.item-has-submenu .nav-item-main-link').on('click', function(e){
+	            e.preventDefault();
+	            $(this).closest('.nav-item-main').find('.collapse').collapse('toggle');
+	          });
+	        $('.nav-toggle-btn').click(function(){
+	          $(this).closest('.nav-main').toggleClass('menu-visible');
+	        });
+	      }
+	    });
+		 
+	    if($(window).width() <= 1024){
+	      $('.item-has-submenu .nav-item-main-link').on('click', function(e){
+	          e.preventDefault();
+	          $(this).closest('.nav-item-main').find('.collapse').collapse('toggle');
+	        });
+	      $('.nav-toggle-btn').click(function(){
+	        $(this).closest('.nav-main').toggleClass('menu-visible');
+	      });
+	    }
+
+		// fixed header
+		$(window).scroll(function(){
+			var scrollTop =$(window).scrollTop();
+			if(scrollTop >=100){
+				$('body').addClass('fixed-header');
+			}else{
+				$('body').removeClass('fixed-header');
+			}
+		});       
+	});
+</script>
+</body>
+</html>
